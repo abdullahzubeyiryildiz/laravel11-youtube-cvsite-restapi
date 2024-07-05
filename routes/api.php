@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\CareerController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\ReferanceController;
 
 
@@ -46,30 +47,28 @@ Route::post('/career/store', [CareerController::class, 'store']);
 Route::post('/career/{id}/update', [CareerController::class, 'update']);
 
 
+Route::get('/educations', [EducationController::class, 'index']);
+Route::post('/education/store', [EducationController::class, 'store']);
+Route::post('/education/{id}/update', [EducationController::class, 'update']);
 
 Route::get('/tags', [TagController::class, 'index']);
 Route::get('/tag/{id}', [TagController::class, 'edit']);
 Route::post('/tags/store', [TagController::class, 'store']);
 Route::post('/tags/{id}/update', [TagController::class, 'update']);
 
-
 Route::get('/referances', [ReferanceController::class, 'index']);
 Route::get('/referance/{id}', [ReferanceController::class, 'edit']);
 Route::post('/referance/store', [ReferanceController::class, 'store']);
 Route::post('/referance/{id}/update', [ReferanceController::class, 'update']);
 
-
-
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::post('/category/store', [CategoryController::class, 'store']);
 Route::post('/category/{id}/update', [CategoryController::class, 'update']);
-
 
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/blog/{id}', [BlogController::class, 'edit']);
 Route::post('/blog/store', [BlogController::class, 'store']);
 Route::post('/blog/{id}/update', [BlogController::class, 'update']);
-
 
 
 Route::get('/projects', [ProjectController::class, 'index']);

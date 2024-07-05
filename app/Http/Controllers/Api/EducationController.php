@@ -75,10 +75,10 @@ class EducationController extends Controller
 
             $uploadImageService = new UploadImageService();
 
-            $uploadImageService->createFolder('uploads/kariyer');
+            $uploadImageService->createFolder('uploads/education');
             $uploadImageService->deleteFile($data->image);
 
-            $uploadedImages = $uploadImageService->uploadMultipleImages($images,'kariyer');
+            $uploadedImages = $uploadImageService->uploadMultipleImages($images,'education');
 
             return $uploadedImages;
 

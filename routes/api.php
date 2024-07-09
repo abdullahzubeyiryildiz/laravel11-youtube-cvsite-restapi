@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\CareerController;
+use App\Http\Controllers\Api\SliderController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\CategoryController;
@@ -55,6 +56,13 @@ Route::get('/tags', [TagController::class, 'index']);
 Route::get('/tag/{id}', [TagController::class, 'edit']);
 Route::post('/tags/store', [TagController::class, 'store']);
 Route::post('/tags/{id}/update', [TagController::class, 'update']);
+
+
+Route::get('/sliders', [SliderController::class, 'index']);
+Route::get('/slider/{id}', [SliderController::class, 'edit']);
+Route::post('/slider/store', [SliderController::class, 'store']);
+Route::post('/slider/{id}/update', [SliderController::class, 'update']);
+
 
 Route::get('/referances', [ReferanceController::class, 'index']);
 Route::get('/referance/{id}', [ReferanceController::class, 'edit']);

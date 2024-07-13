@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\SorcialController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\ReferanceController;
+use App\Http\Controllers\Api\SiteSettingController;
 
 
 Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
@@ -71,6 +72,15 @@ Route::get('/sorcialmedia/{id}', [SorcialController::class, 'edit']);
 Route::post('/sorcialmedia/store', [SorcialController::class, 'store']);
 Route::post('/sorcialmedia/{id}/update', [SorcialController::class, 'update']);
 Route::post('/sorcialmedia/sortable', [SorcialController::class, 'order']);
+
+
+
+Route::get('/sitesetting', [SiteSettingController::class, 'index']);
+Route::get('/sitesetting/{id}', [SiteSettingController::class, 'edit']);
+Route::post('/sitesetting/store', [SiteSettingController::class, 'store']);
+Route::post('/sitesetting/{id}/update', [SiteSettingController::class, 'update']);
+
+
 
 
 Route::get('/referances', [ReferanceController::class, 'index']);

@@ -97,7 +97,6 @@ Route::get('/blog/{id}', [BlogController::class, 'edit']);
 Route::post('/blog/store', [BlogController::class, 'store']);
 Route::post('/blog/{id}/update', [BlogController::class, 'update']);
 
-
 Route::get('/projects', [ProjectController::class, 'index']);
 Route::get('/project/{id}', [ProjectController::class, 'edit']);
 Route::post('/project/store', [ProjectController::class, 'store']);

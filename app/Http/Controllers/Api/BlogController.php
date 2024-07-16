@@ -20,7 +20,22 @@ class BlogController extends Controller
 
     public function edit($id)
     {
+
         $blog = Blog::where('id',$id)->with('category')->first();
+
+        return response()->json($blog);
+    }
+
+    public function read($id) {
+
+        $blog =  Blog::where('id',$id)->with('category')->first();
+
+        $expiresAt = now()->addMinutes(5);
+
+        views($blog)
+        ->cooldown($expiresAt)
+        ->record();
+
         return response()->json($blog);
     }
 

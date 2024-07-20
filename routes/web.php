@@ -1,15 +1,10 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    $blog = Blog::where('id',1)->with('category')->first();
-
-    views($blog)
-    ->record();
-    return view('welcome');
-});
+Route::get('/', [PageController::class,'index']);
 
 
 Route::get('/read/blog/{id}', function ($id) {

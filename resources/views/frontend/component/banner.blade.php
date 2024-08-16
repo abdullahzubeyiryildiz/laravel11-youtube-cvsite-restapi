@@ -1,9 +1,9 @@
 <div id="home">
     <div class="header-textarea">
     <div class="pbmit-heading-subheading">
-    <h4 class="text-anime-style-3"><img src="assets/img/icons/hand1.svg" alt="">Hi I’m Alex Morgan</h4>
+    <h4 class="text-anime-style-3"><img src="assets/img/icons/hand1.svg" alt="">{{$slider->name}}</h4>
     <h1 class="text-anime-style-3">{{$slider->title}}</h1>
-    <span class="marketer">digital marketer
+    <span class="marketer">{{$slider->role}}
         <img src="assets/img/elements/elements5.png" alt="" class="elements1" data-aos="fade-left" data-aos-duration="800">
         <img src="assets/img/elements/elements5.png" alt="" class="elements2" data-aos="fade-right" data-aos-duration="1000">
         <img src="assets/img/elements/elements5.png" alt="" class="elements3" data-aos="fade-left" data-aos-duration="1100">
@@ -29,7 +29,7 @@
             <a href="{{$slider->video_link}}" class="play-btn1 popup-youtube"> <img src="assets/img/elements/elements6.png" alt="" class="elements4"><span><i class="fa-solid fa-play"></i>></span>Play Video</a>
     </div>
     <div class="socila-links-area">
-            <h5>Digital Marketing On</h5>
+            <h5>Sosyal Medya</h5>
             <ul>
             <li data-aos="zoom-in" data-aos-duration="700"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
             <li data-aos="zoom-in" data-aos-duration="800"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>

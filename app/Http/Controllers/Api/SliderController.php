@@ -46,7 +46,9 @@ class SliderController extends Controller
         $sliderData = [
             'title' => $validatedData['title'],
             'content'=>$request->content,
-            'status' => $request->status ?? 1
+            'status' => $request->status ?? 1,
+            'name'=>$request->name,
+            'role'=>$request->role,
         ];
 
         $slider = !empty($id) ? Slider::find($id) : Slider::create($sliderData);

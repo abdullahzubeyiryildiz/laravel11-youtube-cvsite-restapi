@@ -1847,7 +1847,7 @@ Location:
   transition: all 0.4s;
 }
 .homepage2-body .service1-section-area .service-boxs-area .service-author-box:hover .content p {
-  color: var(--ztc-text-text-1) !important;
+  color: var(--ztc-text-text-1);
   transition: all 0.4s;
 }
 .homepage2-body .service1-section-area .service-boxs-area .service-author-box:hover .content .icons {
@@ -1902,6 +1902,7 @@ Location:
 }
 .homepage2-body .service1-section-area .service-boxs-area .service-author-box .content .icons img {
   transition: all 0.4s;
+  width: 100%;
 }
 @media (max-width: 767px) {
   .homepage2-body .service1-section-area .service-boxs-area .service-author-box .content .icons img {

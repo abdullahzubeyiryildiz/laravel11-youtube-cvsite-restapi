@@ -20,3 +20,4 @@ yarn-error.log
 /public/img
 composer.lock
 template
+uploads

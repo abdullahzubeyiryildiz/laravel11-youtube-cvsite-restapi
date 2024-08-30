@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\About;
 use App\Models\Slider;
 use App\Models\Category;
@@ -12,8 +13,10 @@ class PageController extends Controller
     public function index(){
          $slider = Slider::where('status',1)->first();
 
-          $categories = Category::where('status',1)->get();
+         $categories = Category::where('status',1)->get();
          $about = About::first();
-        return view('frontend.index',compact('slider','about','categories'));
+
+         $skills = Tag::where('status',1)->paginate(6);
+        return view('frontend.index',compact('slider','about','categories','skills'));
     }
 }

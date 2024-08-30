@@ -5288,6 +5288,7 @@ Location:
 }
 .homepage2-body .skills-section-area .all-boxes-area .skils-auhtor-area .skills-all-boxarea .content .icons img {
   transition: all 0.4s;
+  width: 100%;
 }
 @media (max-width: 767px) {
   .homepage2-body .skills-section-area .all-boxes-area .skils-auhtor-area .skills-all-boxarea .content .icons img {

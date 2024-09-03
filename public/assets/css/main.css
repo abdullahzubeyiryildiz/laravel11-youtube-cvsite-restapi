@@ -5158,9 +5158,7 @@ Location:
 .homepage2-body .skills-section-area .all-boxes-area .skils-auhtor-area .box2 .content .icons img {
   filter: brightness(0) invert(1);
 }
-.homepage2-body .skills-section-area .all-boxes-area .skils-auhtor-area .box2 .content p {
-  color: var(--ztc-text-text-1) !important;
-}
+
 .homepage2-body .skills-section-area .all-boxes-area .skils-auhtor-area .skills-all-boxarea {
   position: relative;
   z-index: 1;

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use App\Models\Tag;
 use App\Models\About;
 use App\Models\Slider;
 use App\Models\Category;
 use Illuminate\Http\Request;
+
 
 class PageController extends Controller
 {
@@ -17,6 +19,8 @@ class PageController extends Controller
          $about = About::first();
 
          $skills = Tag::where('status',1)->paginate(6);
-        return view('frontend.index',compact('slider','about','categories','skills'));
+
+         $projects = Project::where('status',1)->orderBy('id','desc')->limit(4)->get();
+        return view('frontend.index',compact('slider','about','categories','skills','projects'));
     }
 }

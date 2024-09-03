@@ -17,9 +17,6 @@
                 @if (!empty($skills) && $skills->count() > 0)
                 @foreach ($skills->take(3) as $skill)
                 <div class="skills-all-boxarea box{{$loop->iteration}}" >
-                    <div class="percent">
-                      <p><span class="counter">100</span>%</p>
-                    </div>
                     <img src="assets/img/bg/polygon10.png" alt="" class="polygon2">
                     <img src="assets/img/bg/polygon11.png" alt="" class="polygon4">
 
@@ -40,9 +37,6 @@
                 @if (!empty($skills) && $skills->count() > 0)
                 @foreach ($skills->skip(3) as $skill)
                 <div class="skills-all-boxarea box{{3 + $loop->iteration}}" >
-                    <div class="percent">
-                      <p><span class="counter">100</span>%</p>
-                    </div>
                     <img src="assets/img/bg/polygon10.png" alt="" class="polygon2">
                     <img src="assets/img/bg/polygon11.png" alt="" class="polygon4">
 

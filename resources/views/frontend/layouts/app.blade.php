@@ -70,7 +70,7 @@
        @yield('content')
 
     <!--===== SIDEBAR STARTS=======-->
-       @include('frontend.inc.sideabar')
+       @include('frontend.inc.modal')
    <!--===== SIDEBAR ENDS STARTS=======-->
     </div>
   </div>

@@ -1,16 +1,39 @@
 ;(function($){
-
+ var url = "http://cvsitesi.test";
+ var token = "8|hzOBu9PSp9f7XsesRc2mffranH4gSJkwwjiKOxtrc815d1e8";
 $(document).ready(function(){
 
 //========== POPUP AREA ============= //
-$(".click-here").on('click', function() {
-  $(".custom-model-main").addClass('model-open');
-}); 
+$(".click-here").on('click', function(e) {
+    e.preventDefault();
+    var projectId = $(this).attr('data-projectItem');
+
+    $.ajax({
+        url: url+ '/api/project/' + projectId,
+        type: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        },
+        dataType: 'json',
+        success: function(response) {
+            //assets/img/all-images/blog-img1.png
+            $('.projectImage').attr('src',url+'/'+response.image);
+            $('.projectImage').attr('alt',response.name);
+            $('.projectName').text(response.name);
+            $('.projectContent').text(response.content);
+            $(".custom-model-main").addClass('model-open');
+        },
+        error: function(xhr, status, error) {
+
+        }
+    });
+
+});
 $(".close-btn, .bg-overlay").click(function(){
   $(".custom-model-main").removeClass('model-open');
 });
 
-//========== PAGE PROGRESS STARTS ============= // 
+//========== PAGE PROGRESS STARTS ============= //
   var progressPath = document.querySelector(".progress-wrap path");
   var pathLength = progressPath.getTotalLength();
   progressPath.style.transition = progressPath.style.WebkitTransition =
@@ -42,7 +65,7 @@ $(".close-btn, .bg-overlay").click(function(){
     jQuery("html, body").animate({ scrollTop: 0 }, duration);
     return false;
   });
-//========== PAGE PROGRESS STARTS ============= // 
+//========== PAGE PROGRESS STARTS ============= //
 
 //========== VIDEO POPUP STARTS ============= //
    if ($(".popup-youtube").length > 0) {
@@ -61,7 +84,7 @@ $('select').niceSelect();
 //========== COUNTER UP============= //
 const ucounter = $('.counter');
 if (ucounter.length > 0) {
- ucounter.countUp();  
+ ucounter.countUp();
 };
 //========== TESTIMONIAL AREA ============= //
 // testimonial //
@@ -78,7 +101,7 @@ $('.all-content-testimonial').owlCarousel({
     responsiveClass:true,
     responsive:{
     0:{
-      items:1,                
+      items:1,
     },
     600:{
       items:1,
@@ -103,7 +126,7 @@ $('.area2-testimonial').owlCarousel({
     responsiveClass:true,
     responsive:{
     0:{
-      items:1,                
+      items:1,
     },
     600:{
       items:1,
@@ -143,7 +166,7 @@ if ($('.text-anime-style-1').length) {
     translateXValue = 0,
     delayValue 		= 0.5,
      animatedTextElements = document.querySelectorAll('.text-anime-style-1');
-  
+
   animatedTextElements.forEach((element) => {
     let animationSplitText = new SplitText(element, { type: "chars, words" });
       gsap.from(animationSplitText.words, {
@@ -154,16 +177,16 @@ if ($('.text-anime-style-1').length) {
       stagger: staggerAmount,
       scrollTrigger: { trigger: element, start: "top 85%" },
       });
-  });		
+  });
 }
 
-if ($('.text-anime-style-2').length) {				
+if ($('.text-anime-style-2').length) {
   let	 staggerAmount 		= 0.05,
      translateXValue	= 20,
      delayValue 		= 0.5,
      easeType 			= "power2.out",
      animatedTextElements = document.querySelectorAll('.text-anime-style-2');
-  
+
   animatedTextElements.forEach((element) => {
     let animationSplitText = new SplitText(element, { type: "chars, words" });
       gsap.from(animationSplitText.chars, {
@@ -175,12 +198,12 @@ if ($('.text-anime-style-2').length) {
         ease: easeType,
         scrollTrigger: { trigger: element, start: "top 85%"},
       });
-  });		
+  });
 }
 
-if ($('.text-anime-style-3').length) {		
+if ($('.text-anime-style-3').length) {
   let	animatedTextElements = document.querySelectorAll('.text-anime-style-3');
-  
+
    animatedTextElements.forEach((element) => {
     if (element.animation) {
       element.animation.progress(1).kill();
@@ -207,7 +230,7 @@ if ($('.text-anime-style-3').length) {
       ease: Back.easeOut,
       stagger: 0.02,
     });
-  });		
+  });
 }
 
 

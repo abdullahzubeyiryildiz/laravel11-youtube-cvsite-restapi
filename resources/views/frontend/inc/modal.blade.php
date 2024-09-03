@@ -10,30 +10,12 @@
                       <div class="col-lg-7">
                         <div class="boxes-area">
                           <div class="img1">
-                            <img src="assets/img/all-images/blog-img1.png" alt="">
+                            <img class="projectImage" src="" alt="">
                           </div>
                           <div class="content">
-                            <div class="tags-area">
-                              <a href="#"><img src="assets/img/icons/calender.svg" alt="">23 April 2024</a>
-                              <a href="#"><img src="assets/img/icons/user.svg" alt="">Alex Ross</a>
-                            </div>
-                            <a href="#">Crafting Compelling Designs and Strategic Marketing: A Creative Journey Unveiled</a>
-                            <p>In today's fast-paced digital landscape, the intersection of design and marketing has become increasingly vital for businesses aiming to best captivate audiences and drive success. Crafting compelling designs.</p>
-                            <p class="pera">Psychology and market trends. Through strategic marketing, these an designs are brought to life, leveraging data-driven insights innovative.</p>
-                            <div class="social-area">
-                              <div class="email">
-                               <a href="#">#Email Marketing</a>
-                              </div>
-                              <div class="icons">
-                                <h5>share:</h5>
-                                <ul>
-                                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                </ul>
-                              </div>
-                            </div>
+                            <a href="#" class="projectName"></a>
+                            <p class="projectContent"></p>
+
                           </div>
                         </div>
                       </div>

@@ -18,13 +18,13 @@
                 @if (!empty($projects) && $projects->count() > 0)
                     @foreach ($projects as $key => $project)
                     <div class="col-lg-6 col-md-6">
-                        <div class="portfolio-box-area {{$key > 0 ? 'box'.$loop->iteration :  '' }} click-here">
+                        <div class="portfolio-box-area {{$key > 0 ? 'box'.$loop->iteration :  '' }} click-here" data-projectItem="{{$project->id}}">
                           <div class="images" data-aos="zoom-in" data-aos-duration="1000">
-                            <img src="{{asset($project->image)}}" alt="">
+                            <img  src="{{asset($project->image)}}" alt="">
                           </div>
                           <div class="content-area" data-aos="flip-right" data-aos-duration="1000" style="background-image: url(assets/img/bg/bg6.png); background-position: center; background-size: cover; background-repeat: no-repeat;">
                             <h4>{{$project->name}}</h4>
-                            <a href="javascript:void(0);">{!! $project->content !!}</a>
+                            <p>{!! $project->content !!}</p>
                           </div>
                         </div>
                       </div>

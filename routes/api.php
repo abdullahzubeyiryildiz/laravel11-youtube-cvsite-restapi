@@ -17,6 +17,7 @@ use App\Http\Controllers\Api\ReferanceController;
 use App\Http\Controllers\Api\SiteSettingController;
 
 
+
 Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
 
     Route::get('/user', function (Request $request) {

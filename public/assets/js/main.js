@@ -29,6 +29,39 @@ $(".click-here").on('click', function(e) {
     });
 
 });
+
+
+$("#formContact").on('submit', function(e) {
+    e.preventDefault();
+
+    var formData = new FormData(this);
+
+    $.ajax({
+        url: url + '/api/contact/store',
+        type: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        },
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        success: function(response) {
+           $('.status-check').show();
+
+           setTimeout(function(){
+            $(".custom-model-main").removeClass('model-open');
+            }, 3000);
+
+            $("#formContact")[0].reset();
+        },
+        error: function(xhr, status, error) {
+           console.error(error);
+        }
+    });
+  });
+
+
 $(".close-btn, .bg-overlay").click(function(){
   $(".custom-model-main").removeClass('model-open');
 });

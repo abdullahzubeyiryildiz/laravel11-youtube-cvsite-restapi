@@ -23,7 +23,6 @@ class ContactController extends Controller
             'phone' => 'nullable',
             'subject' => 'nullable',
             'body' => 'nullable',
-            'status' => 'required',
         ]);
         $validatedData['ip']=request()->ip();
         $contact = Contact::create($validatedData);

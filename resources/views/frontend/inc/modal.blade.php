@@ -23,34 +23,30 @@
                       <div class="col-lg-5">
                         <div class="contact-from-area" data-aos="flip-right" data-aos-duration="1000">
                           <h3>Leave A Message</h3>
-                         <form action="https://api.web3forms.com/submit" method="POST">
-                          <input type="hidden" name="access_key" value="0cd32fff-eda2-4da3-be43-37d47fbb396b">
-
+                         <form id="formContact" method="POST">
+                            @csrf
                           <div class="input">
-                              <input type="text" placeholder="Full Name">
+                              <input type="text" name="name" placeholder="Ad Soyad">
                             </div>
                             <div class="input">
-                              <input type="number" placeholder="Phone Number" required>
+                              <input type="number" name="phone" placeholder="Telefon" required>
                             </div>
                             <div class="input">
-                              <input type="email" placeholder="Email Address" required>
+                              <input type="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="input">
-                              <select name="country" id="country" class="country-area nice-select6">
-                                <option value="1" data-display="Service Type">Service Type</option>
-                                <option value="">Belgium</option>
-                                <option value="">Brezil</option>
-                                <option value="">Argentina</option>
-                                <option value="">Bangladesh</option>
-                                <option value="">Germany</option>
-                              </select>
-                            </div>
+                                <input type="text" name="subject" placeholder="Konu" required>
+                          </div>
                             <div class="input">
-                              <textarea placeholder="Message" required></textarea>
+                              <textarea name="body" placeholder="Message" required></textarea>
                             </div>
                             <div class="btn-area text-end" data-aos="fade-up" data-aos-duration="1200">
-                              <button type="submit" class="download-btn1">submit now</button>
+                              <button type="submit" class="download-btn1">Gönder</button>
                             </div>
+
+                            <div class="input">
+                                <div class="alert alert-success status-check" style="display:none">Gönderildi</div>
+                              </div>
                          </form>
                         </div>
                       </div>

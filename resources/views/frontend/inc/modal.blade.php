@@ -22,7 +22,7 @@
 
                       <div class="col-lg-5">
                         <div class="contact-from-area" data-aos="flip-right" data-aos-duration="1000">
-                          <h3>Leave A Message</h3>
+                          <h3>Bana Ulaşın</h3>
                          <form id="formContact" method="POST">
                             @csrf
                           <div class="input">

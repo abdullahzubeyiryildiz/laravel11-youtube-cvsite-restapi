@@ -6,7 +6,6 @@
    @include('frontend.component.services')
    @include('frontend.component.skill')
    @include('frontend.component.portfolio')
-   @include('frontend.component.feedback')
    @include('frontend.component.blog')
    @include('frontend.component.contact')
 </div>

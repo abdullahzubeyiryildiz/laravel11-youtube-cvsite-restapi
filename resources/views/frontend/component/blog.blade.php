@@ -14,7 +14,7 @@
                 @if ($blogs)
                     @foreach ($blogs as $key => $blog)
                     <div class="col-lg-6 col-md-6">
-                        <div class="blog-box-area {{$key > 0 ? 'box'.$key+1 : ''}} click-here">
+                        <div class="blog-box-area {{$key > 0 ? 'box'.$key+1 : ''}} blog-click-here" data-blogItem="{{$blog->id}}">
                           <div class="images" data-aos="zoom-in" data-aos-duration="1000">
                             <img src="{{$blog->image}}" alt="">
                           </div>

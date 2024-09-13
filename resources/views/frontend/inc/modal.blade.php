@@ -10,11 +10,11 @@
                       <div class="col-lg-7">
                         <div class="boxes-area">
                           <div class="img1">
-                            <img class="projectImage" src="" alt="">
+                            <img class="cardImage" src="" alt="">
                           </div>
                           <div class="content">
-                            <a href="#" class="projectName"></a>
-                            <p class="projectContent"></p>
+                            <a href="#" class="cardName"></a>
+                            <p class="cardContent"></p>
 
                           </div>
                         </div>

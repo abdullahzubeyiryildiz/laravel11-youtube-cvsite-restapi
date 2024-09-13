@@ -17,10 +17,10 @@ $(".click-here").on('click', function(e) {
         dataType: 'json',
         success: function(response) {
             //assets/img/all-images/blog-img1.png
-            $('.projectImage').attr('src',url+'/'+response.image);
-            $('.projectImage').attr('alt',response.name);
-            $('.projectName').text(response.name);
-            $('.projectContent').text(response.content);
+            $('.cardImage').attr('src',url+'/'+response.image);
+            $('.cardImage').attr('alt',response.name);
+            $('.cardName').text(response.name);
+            $('.cardContent').text(response.content);
             $(".custom-model-main").addClass('model-open');
         },
         error: function(xhr, status, error) {
@@ -30,6 +30,32 @@ $(".click-here").on('click', function(e) {
 
 });
 
+
+$(".blog-click-here").on('click', function(e) {
+    e.preventDefault();
+    var blogId = $(this).attr('data-blogItem');
+
+    $.ajax({
+        url: url+ '/api/blog/' + blogId,
+        type: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        },
+        dataType: 'json',
+        success: function(response) {
+            //assets/img/all-images/blog-img1.png
+            $('.cardImage').attr('src',url+'/'+response.image);
+            $('.cardImage').attr('alt',response.name);
+            $('.cardName').text(response.name);
+            $('.cardContent').text(response.content);
+            $(".custom-model-main").addClass('model-open');
+        },
+        error: function(xhr, status, error) {
+
+        }
+    });
+
+});
 
 $("#formContact").on('submit', function(e) {
     e.preventDefault();

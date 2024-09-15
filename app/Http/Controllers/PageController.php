@@ -8,6 +8,7 @@ use App\Models\About;
 use App\Models\Slider;
 use App\Models\Project;
 use App\Models\Category;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 
 
@@ -24,6 +25,8 @@ class PageController extends Controller
          $projects = Project::where('status',1)->orderBy('id','desc')->limit(4)->get();
 
          $blogs = Blog::where('status',1)->orderBy('id','desc')->limit(4)->get();
-        return view('frontend.index',compact('slider','about','categories','skills','projects','blogs'));
+
+          $setting = SiteSetting::pluck('setting_value','setting_key')->toArray();
+         return view('frontend.index',compact('slider','about','categories','skills','projects','blogs','setting'));
     }
 }

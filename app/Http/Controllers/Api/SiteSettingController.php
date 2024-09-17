@@ -42,10 +42,8 @@ class SiteSettingController extends Controller
             'setting_key.required'=>'Key Boş Geçilemez',
         ]);
 
-
         $sitesettingData = [
             'setting_key' => $validatedData['setting_key'],
-            'setting_value'=>$request->setting_value,
             'setting_type'=>$request->setting_type,
         ];
 
@@ -55,9 +53,35 @@ class SiteSettingController extends Controller
             return response()->json(['message' => 'Site Ayar Bulunamadı!'], 404);
         }
 
+
+
+        if($request->setting_type == 'file' && $request->hasFile('setting_value')) {
+            $uploadedImages =  $this->saveImageUpload($request, $sitesetting);
+            $value = $uploadedImages[0]['path'];
+        }else {
+            $value = $request->setting_value;
+        }
+
+          $sitesettingData['setting_value'] =  $value;
+
         $sitesetting->update($sitesettingData);
 
         return response()->json(['message' => !empty($id) ? 'Başarıyla Site Ayar Güncellendi.' : 'Başarıyla Site Ayar Oluşturuldu.', 'data'=> $sitesetting], 200);
     }
+
+    private function saveImageUpload($request, $data) {
+
+                $images = $request->file('setting_value');
+
+                $uploadImageService = new UploadImageService();
+
+                $uploadImageService->createFolder('uploads/site');
+                $uploadImageService->deleteFile($data->setting_value);
+
+                $uploadedImages = $uploadImageService->uploadMultipleImages($images,'site');
+
+                return $uploadedImages;
+
+        }
 
 }

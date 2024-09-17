@@ -22,6 +22,7 @@ class UploadImageService
 
     private function uploadImage(object $image,$folder=null)
     {
+
         $validationErrors = $this->validateExtension($image);
         if (!empty($validationErrors)) {
             return ['errors' => $validationErrors];

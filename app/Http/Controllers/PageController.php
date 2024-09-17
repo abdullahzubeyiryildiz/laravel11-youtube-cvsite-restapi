@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SorcialMedia;
 use App\Models\Tag;
 use App\Models\Blog;
 use App\Models\About;
@@ -27,6 +28,10 @@ class PageController extends Controller
          $blogs = Blog::where('status',1)->orderBy('id','desc')->limit(4)->get();
 
           $setting = SiteSetting::pluck('setting_value','setting_key')->toArray();
-         return view('frontend.index',compact('slider','about','categories','skills','projects','blogs','setting'));
+
+          $sorcialmedias = SorcialMedia::where('status',1)->orderBy('id','desc')->get();
+
+
+         return view('frontend.index',compact('slider','about','categories','skills','projects','blogs','setting','sorcialmedias'));
     }
 }

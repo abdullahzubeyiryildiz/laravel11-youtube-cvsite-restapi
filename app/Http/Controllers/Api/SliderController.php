@@ -45,7 +45,7 @@ class SliderController extends Controller
 
         $sliderData = [
             'title' => $validatedData['title'],
-            'content'=>$request->content,
+            'content'=> $request->content ?? '',
             'status' => $request->status ?? 1,
             'name'=>$request->name,
             'role'=>$request->role,

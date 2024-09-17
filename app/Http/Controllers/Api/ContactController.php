@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Contact;
 use App\Mail\ContactMail;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
@@ -46,5 +47,18 @@ class ContactController extends Controller
         Mail::to($contact->email)->send(new ContactMail($subject, $contact));
 
         return response()->json(['message' => 'Mail Gönderildi'], 200);
+    }
+
+    public function subscribeForm(Request $request) {
+        $request->validate([
+            'email' => 'required|email|unique:subscriptions,email',
+        ]);
+
+        Subscription::create([
+            'email' => $request->email,
+        ]);
+
+        return response()->json(['error'=> false, 'message'=>'Abone Olundu']);
+
     }
 }

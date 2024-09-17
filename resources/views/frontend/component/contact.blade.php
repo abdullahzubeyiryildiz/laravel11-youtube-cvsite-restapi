@@ -44,10 +44,12 @@
                 <div class="col-lg-12">
                   <div class="footer-section-area" data-aos="fade-up" data-aos-duration="1200" style="background-image: url(assets/img/bg/footer-bg2.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
                     <div class="footer-form-area text-center pbmit-heading-subheading">
-                      <h2 class="text-anime-style-3">Sign up to newsletter</h2>
-                      <form>
-                        <input type="email" placeholder="Email Address*">
-                        <button type="submit">Subscribe now</button>
+                      <h2 class="text-anime-style-3">Abone Ol</h2>
+                      <p class="messageText"></p>
+                      <form id="formSubscribe" method="POST">
+                        @csrf
+                        <input type="email" name="email" placeholder="Email Address*">
+                        <button type="submit">Kaydol</button>
                       </form>
                     </div>
                     <div class="social-links-area">

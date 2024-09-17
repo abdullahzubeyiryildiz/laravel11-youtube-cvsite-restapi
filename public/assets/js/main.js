@@ -88,6 +88,36 @@ $("#formContact").on('submit', function(e) {
   });
 
 
+
+
+$("#formSubscribe").on('submit', function(e) {
+    e.preventDefault();
+
+    var formData = new FormData(this);
+
+    $.ajax({
+        url: url + '/api/subscribe/store',
+        type: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+        },
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        success: function(response) {
+            $("#formSubscribe")[0].reset();
+            $('.messageText').text(response.message);
+        },
+        error: function(xhr, status, error) {
+            $('.messageText').css('color','#fff').text(xhr.responseJSON.message);
+            $("#formSubscribe")[0].reset();
+        }
+    });
+  });
+
+
+
 $(".close-btn, .bg-overlay").click(function(){
   $(".custom-model-main").removeClass('model-open');
 });
